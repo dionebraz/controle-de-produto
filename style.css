@@ -12,8 +12,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #333;
-  background-color: #222;
+  color: #222;
+  background-color: #111;
 }
 
 
@@ -135,4 +135,56 @@ section ul li:active {
 
 #btnExcluir01 {
   background-color: rgb(196, 57, 57);
+}
+
+/* FOOTER */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  border-top: 3px solid #111;
+  box-shadow: 0 0 8px #111;
+  background-color: #f3f0e6;
+  backdrop-filter: blur(4px);
+}
+
+footer p {
+  font-size: 1.1em;
+}
+
+footer p a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+footer p a:hover {
+  text-decoration: underline 2px;
+}
+
+footer .social-networks {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+footer .link-social {
+  padding: 2px;
+  color: #333;
+}
+
+footer .link-social:hover {
+  color: #006EB8;
+  transform: scale(1.1);
+}
+
+footer .link-social .fa-brands {
+  font-size: 1.3em;
+}
+
+footer .update-date {
+  position: fixed;
+  right: 0;
 }
