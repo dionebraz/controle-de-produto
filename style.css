@@ -184,7 +184,11 @@ footer .link-social .fa-brands {
   font-size: 1.3em;
 }
 
-footer .update-date {
-  position: fixed;
+footer small {
+  position: absolute;
+  top: 0;
   right: 0;
+  margin: 4px 8px 0 0;
+  font-weight: 600;
+  color: #006EB8;
 }
