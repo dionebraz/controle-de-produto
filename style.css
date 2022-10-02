@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #333;
+  background-color: #222;
+}
+
+
+.container {
+  width: 800px;
+  margin: 40px auto;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #f3f0e6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+section ul li {
+  box-shadow: 1px 1px 0px #000;
+  width: 150px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all ease .2s;
+}
+
+section ul li:active {
+  transform: scale(0.9);
+}
+
+section ul li:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* MODAL */
+
+.modal {
+  display: flex;
+  justify-content: center;
+  background-color: #f3f0e6;
+  padding: 15px;
+  gap: 30px;
+}
+
+.modal label {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal ul li {
+  list-style: none;
+}
+
+.selectItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectItem label {
+  font-size: 1.5em;
+}
+
+.selectItem #items {
+  width: 100%;
+}
+
+.selectItem button {
+  width: fit-content;
+  color: #fff;
+  background-color: #006EB8;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* ESTILIZANDO TABELA */
+
+.table {
+  display: table;
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid;
+}
+
+.table * {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+.table thead {
+  color: #fff;
+  background: #560bad;
+}
+
+.table tbody>tr {
+  text-align: center;
+}
+
+#btnExcluir {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+#btnExcluir01 {
+  background-color: rgb(196, 57, 57);
+}

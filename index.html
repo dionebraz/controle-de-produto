@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Grupo Incopostes</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="title">
+            <h1>Controle De Produtos Tocha Mig</h1>
+        </header>
+
+        <section class="nameOfCollaborators">
+            <ul class="collaborators">
+                <li>Dione Braz</li>
+                <li>Bruno Rocha</li>
+                <li>Vitu Artz</li>
+                <li>Carlos Alberto</li>
+                <li>Pablo Ricardo</li>
+                <li>João Pedro</li>
+                <li>Ricardo Souza</li>
+                <li>Felipe Lima</li>
+                <li>Pedro Vitaliano</li>
+                <li>Lucas Andrade</li>
+            </ul>
+        </section>
+
+        <div class="modal">
+            <div class="selectItem">
+                <label for="items">Selecione o Item</label>
+                <select id="items">
+                    <option value="Bico">Bico</option>
+                    <option value="Bocal">Bocal</option>
+                    <option value="Porta Bico">Porta Bico</option>
+                    <option value="Parafuso">Parafuso</option>
+                    <option value="Cama de ar">Cama de ar</option>
+                    <option value="Suporte mig">Suporte Mig</option>
+                </select>
+                <div class="buttons">
+                    <button type="button" id="btnSalvar">SALVAR</button>
+                    <button type="button" id="btnExcluir01" onclick="cleanTable()">LIMPAR TABELA</button>
+                </div>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <th>Colaborador</th>
+                <th>Item</th>
+                <th>Data</th>
+                <th>Ação</th>
+            </thead>
+
+            <tbody class="dataTable">
+
+            </tbody>
+        </table>
+    </div>
+
+    <audio src="item-salvo.ogg" id="play-sound"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
