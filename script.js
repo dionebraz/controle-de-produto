@@ -76,18 +76,6 @@ function clearActive() {
     });
 }
 
-// function mostrarHistorico() {
-//     const Nome = document.querySelector('#name')
-//     const Item = document.querySelector('#item')
-//     const Data = document.querySelector('#data')
-
-//     Nome.innerHTML = localStorage.colaborador
-//     Item.innerHTML = localStorage.item
-//     Data.innerHTML = localStorage.dataAtual
-
-//     criarPedidos(Nome, Item, Data)
-// }
-
 function criarPedidos(Colaborador, Item, Data) {
     return {
         colaborador: Colaborador,
@@ -95,10 +83,6 @@ function criarPedidos(Colaborador, Item, Data) {
         data: Data
     }
 }
-
-// const adicionarItem = (item) => {
-//     colaborador.item = item
-// }
 
 function printList() {
     dataTable.innerHTML = ''
@@ -121,6 +105,7 @@ function clearAllRegisters(id) {
     listaDeRegistros = listaDeRegistros.filter((item, index) => index != id)
     localStorage.setItem('listaDeRegistros', JSON.stringify(listaDeRegistros))
     listaDeRegistros = getLocalStorage('listaDeRegistros')
+    document.querySelector('#sound-trash').play()
 
     printList()
 }
