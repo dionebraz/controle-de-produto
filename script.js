@@ -93,7 +93,7 @@ function printList() {
             <td>${item.nome}</td>
             <td>${item.item}</td>
             <td>${item.data}</td>
-            <td style="background: rgb(196, 57, 57)"><button type="button" id="btnExcluir" onclick="clearAllRegisters(${index})">EXCLUIR</button></td>
+            <td style="background: rgb(196, 57, 57)" class="no-print"><button type="button" id="btnExcluir" onclick="clearAllRegisters(${index})">EXCLUIR</button></td>
         </tr>
         `
     })
@@ -116,4 +116,10 @@ function cleanTable() {
     listaDeRegistros = getLocalStorage('listaDeRegistros')
 
     printList()
+}
+
+// FUNÇÃO IMPRIMIR TABELA
+
+function printTable() {
+    window.print()
 }
