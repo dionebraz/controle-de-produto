@@ -23,7 +23,7 @@ body {
   padding: 2rem;
   border-radius: 8px;
   background-color: #f3f0e6;
-  animation: slide-top 2s cubic-bezier(0.550, 0.055, 0.675, 0.190) reverse both;
+  animation: slide-top 1.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) reverse both;
 }
 
 @keyframes slide-top {
@@ -100,6 +100,12 @@ section ul li:active {
 
 .selectItem #items {
   width: 100%;
+  outline: none;
+  font-size: 1em;
+}
+
+#selected {
+  display: none;
 }
 
 .selectItem button {
