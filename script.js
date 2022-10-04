@@ -34,11 +34,10 @@ function salvarDados() {
     localStorage.setItem('listaDeRegistros', JSON.stringify(listaDeRegistros))
     listaDeRegistros = getLocalStorage('listaDeRegistros')
     colaborador = { nome: null, item: null, data: null };
+    document.getElementById('save-sound').play()
+    document.getElementById('save-sound').volume = 0.5
 
     printList()
-
-    var mp3 = document.getElementById('play-sound').play()
-    mp3.volume = 0.1
 }
 
 listOfCollaborators.forEach((item) => {
@@ -114,6 +113,8 @@ function cleanTable() {
     listaDeRegistros = []
     localStorage.setItem('listaDeRegistros', JSON.stringify(listaDeRegistros))
     listaDeRegistros = getLocalStorage('listaDeRegistros')
+    document.querySelector('#clear-table-sound').play()
+    document.querySelector('#clear-table-sound').volume = 0.5
 
     printList()
 }
