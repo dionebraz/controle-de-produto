@@ -64,3 +64,9 @@
         font-size: 0.8em;
     }
 }
+
+@media print {
+    .container {
+        width: 80%;
+    }
+}
