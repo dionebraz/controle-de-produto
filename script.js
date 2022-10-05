@@ -64,7 +64,12 @@ btnToSave.addEventListener('click', (event) => {
         clearActive()
         salvarDados()
     } else {
-        alert('Selecione antes um colaborador!')
+        document.querySelector('.alert-modal').classList.add('active-modal')
+        document.querySelector('body').classList.add('body-blur')
+        document.querySelector('#close-modal').addEventListener('click', () => {
+            document.querySelector('.alert-modal').classList.remove('active-modal')
+            document.querySelector('body').classList.remove('body-blur')
+        })
     }
 })
 
