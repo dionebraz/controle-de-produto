@@ -1,0 +1,66 @@
+@media (max-width: 600px) {
+
+    .container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container .title {
+        font-size: 0.7em;
+    }
+
+    .container .collaborators li {
+        width: 90px;
+        font-size: 0.5em;
+    }
+
+    .container .selectItem label {
+        font-size: 1em;
+    }
+
+    .container .selectItem #items {
+        font-size: 0.7em;
+        padding: 2;
+    }
+
+    .container .buttons button {
+        padding: 5px;
+        font-size: 0.6em;
+    }
+
+    .container .table {
+        width: 100%;
+    }
+
+    .container .table th {
+        font-size: 0.7em;
+    }
+
+    .container .table td {
+        font-size: 0.6em;
+    }
+
+    .container .table td button {
+        font-size: 0.7em;
+    }
+
+    footer {
+        padding: 0;
+    }
+
+    footer p {
+        font-size: 0.6em;
+    }
+
+    footer .social-networks {
+        gap: 15px;
+    }
+
+    footer .link-social {
+        padding: 0;
+    }
+
+    footer .link-social .fa-brands {
+        font-size: 0.8em;
+    }
+}
