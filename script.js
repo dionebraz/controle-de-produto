@@ -1,6 +1,6 @@
 const selectionItems = document.querySelector('#items')
 const btnToSave = document.getElementById('btnSalvar')
-var listOfCollaborators = document.querySelectorAll('.collaborators > li')
+var listOfCollaborators = document.querySelectorAll('.ul > li')
 let element;
 const dataTable = document.querySelector('.dataTable')
 
