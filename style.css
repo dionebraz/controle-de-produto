@@ -118,6 +118,7 @@ section ul li:active {
 
 .selectItem label {
   font-size: 1.5em;
+  font-weight: 700;
 }
 
 .selectItem #items {
