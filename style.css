@@ -16,6 +16,37 @@ body {
   background-color: #fff;
 }
 
+/* HEADER */
+
+.header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 30px;
+  color: #fff;
+  background: #0a0908;
+}
+
+.header h3 span {
+  color: #0099ff;
+}
+
+.searchCollaborator input, button {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.searchCollaborator button {
+  cursor: pointer;
+  color: #fff;
+  background: #0099ff;
+}
+
+/* CONTAINER */
 
 .container {
   width: 80%;

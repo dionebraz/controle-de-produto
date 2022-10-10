@@ -124,3 +124,8 @@ function cleanTable() {
 function printTable() {
     window.print()
 }
+
+// FUNÇÃO FILTER | BUSCAR DETERMINADO COLABORADOR E INFORMAÇÕES DO MESMO
+
+// const itemsPickedUpByContributor = listaDeRegistros.filter(index => index == 2)
+// console.log(itemsPickedUpByContributor)
