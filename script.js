@@ -127,8 +127,8 @@ function printTable() {
 }
 
 // FUNÇÃO FILTER | BUSCAR DETERMINADO COLABORADOR E INFORMAÇÕES DO MESMO
-// const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
-// console.log(searchContributorName.filter((item) => item.nome == "Paulo Vitor"))
+const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
+console.log(searchContributorName.filter((item) => item.nome == "Paulo Vitor"))
 
 // FUNÇÃO PEGAR INPUT COM NOME DO COLABORADOR
 searchButton.addEventListener('click', buscarColaborador)
