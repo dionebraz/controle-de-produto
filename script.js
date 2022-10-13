@@ -3,6 +3,8 @@ const btnToSave = document.getElementById('btnSalvar')
 var listOfCollaborators = document.querySelectorAll('.ul > li')
 let element;
 const dataTable = document.querySelector('.dataTable')
+const inputCollaborator = document.querySelector('#input-collaborator')
+const searchButton = document.querySelector('#search-button')
 
 // Objeto de registros no localstorage
 let colaborador = { nome: null, item: null, data: Date }
@@ -64,7 +66,7 @@ btnToSave.addEventListener('click', (event) => {
         clearActive()
         salvarDados()
     } else {
-        return 
+        return
     }
 })
 
@@ -120,12 +122,31 @@ function cleanTable() {
 }
 
 // FUNÇÃO IMPRIMIR TABELA
-
 function printTable() {
     window.print()
 }
 
 // FUNÇÃO FILTER | BUSCAR DETERMINADO COLABORADOR E INFORMAÇÕES DO MESMO
+// const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
+// console.log(searchContributorName.filter((item) => item.nome == "Paulo Vitor"))
 
-// const itemsPickedUpByContributor = listaDeRegistros.filter(index => index == 2)
-// console.log(itemsPickedUpByContributor)
+// FUNÇÃO PEGAR INPUT COM NOME DO COLABORADOR
+searchButton.addEventListener('click', buscarColaborador)
+
+function buscarColaborador() {
+    const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
+    const returnedContributorName = searchContributorName.filter((item) => item.nome == inputCollaborator.value)
+
+    mostrarLista(returnedContributorName)
+}
+
+function mostrarLista(item) {
+    item.forEach((nome, index) => {
+        console.log(`Item: ${item[index].item} | Data: ${item[index].data}`)
+        const ul = document.querySelector('.lista')
+        const li = document.createElement('li')
+
+        li.innerHTML = `Item: <strong>${item[index].item}</strong> | Data: <strong>${item[index].data}</strong>`
+        ul.appendChild(li)
+    })
+}

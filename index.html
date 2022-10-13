@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +7,15 @@
     <link rel="shortcut icon" href="/assets/midia/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
-    <!-- FONT AWESOME SCRIPT -->
-    <script src="https://kit.fontawesome.com/e82e13ec1f.js" crossorigin="anonymous"></script>
     <title>IncoTech | 2022 - Versão 0810</title>
 </head>
-
 <body>
 
     <header class="header no-print">
         <h3>Inco<span>Tech</span></h3>
         <div class="searchCollaborator">
-            <input type="text" placeholder="Colaborador">
-            <button type="submit">Buscar</button>
+            <input id="input-collaborator" type="text" placeholder="Colaborador">
+            <button id="search-button" type="submit">Buscar</button>
         </div>
     </header>
 
@@ -102,11 +98,14 @@
         </table>
     </div>
 
+    <div class="mostrar-lista">
+        <ul class="lista"></ul>
+    </div>
+
     <audio src="/assets/midia/clear-table-sound.ogg" id="clear-table-sound"></audio>
     <audio src="/assets/midia/item-salvo.mp3" id="save-sound"></audio>
     <audio src="/assets/midia/sound-trash.ogg" id="sound-trash"></audio>
 
     <script src="script.js"></script>
 </body>
-
 </html>
