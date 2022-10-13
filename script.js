@@ -134,8 +134,17 @@ console.log(searchContributorName.filter((item) => item.nome == "Paulo Vitor"))
 searchButton.addEventListener('click', buscarColaborador)
 
 function buscarColaborador() {
+    const textoinput = inputCollaborator.value
+    const textoseparado = textoinput.split(" ")
+
+    for (let i =0; i < textoseparado.length; i++) {
+        textoseparado[i] = textoseparado[i][0].toUpperCase() + textoseparado[i].substr(1)
+    }
+
+    textoseparado.join(" ")
+
     const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
-    const returnedContributorName = searchContributorName.filter((item) => item.nome == inputCollaborator.value)
+    const returnedContributorName = searchContributorName.filter((item) => item.nome == textoseparado)
 
     mostrarLista(returnedContributorName)
 }
