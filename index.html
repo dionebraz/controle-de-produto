@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +10,13 @@
     <link rel="stylesheet" href="mobile.css">
     <title>IncoTech | 2022 - Versão 0810</title>
 </head>
+
 <body>
 
     <header class="header no-print">
         <h3>Inco<span>Tech</span></h3>
         <div class="searchCollaborator">
-            <input id="input-collaborator" type="text" placeholder="Colaborador">
+            <input id="input-collaborator" type="text" placeholder="Colaborador" autofocus="true">
             <button id="search-button" type="submit">Buscar</button>
         </div>
     </header>
@@ -81,6 +83,12 @@
                     <button type="button" id="btnExcluir01" onclick="cleanTable()">LIMPAR TABELA</button>
                     <button id="print" onclick="printTable()">IMPRIMIR</button>
                 </div>
+                <div>
+                    <label for="buscar" id="containerSearch">
+                        <input id="buscar" type="text" placeholder="Buscar Colaborador" class="inputFilter">
+                        <img src="assets/midia/search-icon.svg" alt="">
+                    </label>
+                </div>
             </div>
         </div>
 
@@ -98,9 +106,11 @@
         </table>
     </div>
 
-    <div class="mostrar-lista">
+    <dialog>
+        <h1 class="dialog-title"></h1>
         <ul class="lista"></ul>
-    </div>
+        <button>Fechar</button>
+    </dialog>
 
     <audio src="/assets/midia/clear-table-sound.ogg" id="clear-table-sound"></audio>
     <audio src="/assets/midia/item-salvo.mp3" id="save-sound"></audio>
@@ -108,4 +118,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

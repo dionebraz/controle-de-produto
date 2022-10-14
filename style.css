@@ -35,7 +35,8 @@ body {
 
 /* SEARCH COLLABORATOR */
 
-.searchCollaborator input, button {
+.searchCollaborator input,
+button {
   padding: 8px;
   border-radius: 4px;
   border: none;
@@ -62,6 +63,7 @@ header {
   text-align: center;
   margin-bottom: 40px;
 }
+
 /* ######################################################### TABELA DE EMPREGADOS EM GRID ############################################# */
 .nameOfCollaborators {
   display: grid;
@@ -70,13 +72,16 @@ header {
   position: relative;
 }
 
-.nameOfCollaborators .turno-1, .collaborators-turno-1 {
+.nameOfCollaborators .turno-1,
+.collaborators-turno-1 {
   grid-column: 1;
 }
+
 .nameOfCollaborators .turno-2 {
   grid-column: 2;
   grid-row: 1;
 }
+
 .nameOfCollaborators::before {
   content: '';
   width: 2px;
@@ -90,6 +95,7 @@ header {
 .nameOfCollaborators h2 {
   text-decoration: underline;
 }
+
 /* ######################################################### FIM TABELA DE EMPREGADOS EM GRID ############################################# */
 
 
@@ -101,7 +107,7 @@ section ul {
   gap: 20px;
   list-style: none;
   margin-top: 1.5rem;
-  
+
 }
 
 section ul li {
@@ -187,7 +193,7 @@ option {
 
 .table {
   display: table;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   border-collapse: collapse;
   border: 1px solid;
@@ -202,6 +208,10 @@ option {
   color: #fff;
   background: #006EB8;
 }
+
+/* .table thead th:nth-child(1) {
+  width: 160px;
+} */
 
 .table tbody>tr {
   text-align: center;
@@ -224,7 +234,7 @@ option {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 350px;
   display: none;
   align-items: center;
@@ -308,4 +318,84 @@ body.body-blur::before {
   head title {
     display: none;
   }
+}
+
+/* ESTILIZANDO A DIALOG / MODAL */
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+dialog ul {
+  list-style: none;
+}
+
+dialog ul li {
+  margin-bottom: 10px;
+}
+
+dialog ul li strong {
+  color: #0099ff;
+}
+
+dialog button {
+  transition: ease .2s;
+  cursor: pointer;
+  color: #fff;
+  background: rgb(196, 57, 57);
+}
+
+dialog button:hover {
+  background: rgb(208, 5, 20);
+}
+
+/* ESTILIZAÇÃO INPUT QUE FILTRA LISTA */
+
+#containerSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 280px;
+}
+
+.inputFilter {
+  border: 2px solid #006EB8;
+  outline: none;
+  padding: 4px;
+  font-size: 1rem;
+  color: #fff;
+  width: 100%;
+}
+
+.inputFilter::placeholder {
+  color: #006EB8;
+}
+
+.inputFilter:focus {
+  border: 2px solid #222;
+  color: #fff;
+  font-size: medium;
+  background: #006EB8;
+}
+
+.inputFilter:focus::placeholder {
+  color: #fff;
+}
+
+#containerSearch img {
+  width: 24px;
+  position: absolute;
+  right: 10px;
 }

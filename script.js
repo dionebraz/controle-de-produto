@@ -5,6 +5,14 @@ let element;
 const dataTable = document.querySelector('.dataTable')
 const inputCollaborator = document.querySelector('#input-collaborator')
 const searchButton = document.querySelector('#search-button')
+const dialogModal = document.querySelector('dialog')
+const dialogButtonClose = document.querySelector('dialog button')
+const inputSearchCollaborator = document.querySelector('#buscar')
+
+inputSearchCollaborator.onkeyup = (event) => {
+    filterListCollaborators(event.target)
+    printList()
+}
 
 // Objeto de registros no localstorage
 let colaborador = { nome: null, item: null, data: Date }
@@ -88,7 +96,9 @@ function criarPedidos(Colaborador, Item, Data) {
 function printList() {
     dataTable.innerHTML = ''
 
-    listaDeRegistros.forEach((item, index) => {
+    const listFilter = filterListCollaborators(inputSearchCollaborator)
+
+    listFilter.forEach((item, index) => {
         dataTable.innerHTML += `
         <tr id="${index}">
             <td>${item.nome}</td>
@@ -101,6 +111,16 @@ function printList() {
 }
 
 printList()
+
+function filterListCollaborators(ev) {
+    const elValue = ev.value
+
+    if (elValue.length > 2) {
+        return listaDeRegistros.filter((item) => item.nome.toUpperCase().includes(elValue.toUpperCase()))
+    } else {
+        return listaDeRegistros
+    }
+}
 
 function clearAllRegisters(id) {
     listaDeRegistros = listaDeRegistros.filter((item, index) => index != id)
@@ -127,35 +147,36 @@ function printTable() {
 }
 
 // FUNÇÃO FILTER | BUSCAR DETERMINADO COLABORADOR E INFORMAÇÕES DO MESMO
-const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
-console.log(searchContributorName.filter((item) => item.nome == "Paulo Vitor"))
 
-// FUNÇÃO PEGAR INPUT COM NOME DO COLABORADOR
 searchButton.addEventListener('click', buscarColaborador)
 
 function buscarColaborador() {
-    const textoinput = inputCollaborator.value
-    const textoseparado = textoinput.split(" ")
-
-    for (let i =0; i < textoseparado.length; i++) {
-        textoseparado[i] = textoseparado[i][0].toUpperCase() + textoseparado[i].substr(1)
-    }
-
-    textoseparado.join(" ")
+    const minhaFrase = inputCollaborator.value;
+    const fraseFinal = minhaFrase.replace(/(^\w{1})|(\s+\w{1})/g, letra => letra.toUpperCase());
 
     const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
-    const returnedContributorName = searchContributorName.filter((item) => item.nome == textoseparado)
+    const returnedContributorName = searchContributorName.filter((item) => {
+        return item.nome == fraseFinal
+        console.log(item.nome == fraseFinal)
+    })
 
+    document.querySelector('.dialog-title').innerText = minhaFrase.toUpperCase()
     mostrarLista(returnedContributorName)
 }
 
 function mostrarLista(item) {
-    item.forEach((nome, index) => {
-        console.log(`Item: ${item[index].item} | Data: ${item[index].data}`)
-        const ul = document.querySelector('.lista')
-        const li = document.createElement('li')
+    const ul = document.querySelector('.lista')
 
+    item.forEach((element, index) => {
+        const li = document.createElement('li')
         li.innerHTML = `Item: <strong>${item[index].item}</strong> | Data: <strong>${item[index].data}</strong>`
         ul.appendChild(li)
+
     })
+
+    dialogModal.showModal()
+    dialogButtonClose.onclick = () => {
+        dialogModal.close()
+        ul.innerHTML = ""
+    }
 }
