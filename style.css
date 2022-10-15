@@ -367,7 +367,7 @@ dialog button:hover {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 280px;
+  width: 270px;
 }
 
 .inputFilter {
@@ -390,12 +390,18 @@ dialog button:hover {
   background: #006EB8;
 }
 
+#containerSearch:focus-within .searchIcon {
+  fill: #fff;
+}
+
 .inputFilter:focus::placeholder {
   color: #fff;
 }
 
-#containerSearch img {
+#containerSearch .searchIcon {
   width: 24px;
   position: absolute;
   right: 10px;
+  display: flex;
+  fill: #555;
 }

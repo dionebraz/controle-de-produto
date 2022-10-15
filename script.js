@@ -157,7 +157,6 @@ function buscarColaborador() {
     const searchContributorName = JSON.parse(localStorage.getItem("listaDeRegistros"))
     const returnedContributorName = searchContributorName.filter((item) => {
         return item.nome == fraseFinal
-        console.log(item.nome == fraseFinal)
     })
 
     document.querySelector('.dialog-title').innerText = minhaFrase.toUpperCase()
